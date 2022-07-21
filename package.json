@@ -4,7 +4,8 @@
   "description": "",
   "main": "assertJsonTemplate.js",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "preversion": "git fetch",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "author": "Jakub Pawlik",
   "license": "ISC"
