@@ -7,6 +7,19 @@
     "preversion": "git fetch",
     "postversion": "git push && git push --tags && npm publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:jakubpawlik/newman-assert-json-template.git"
+  },
+  "keywords": [
+    "newman",
+    "postman",
+    "json",
+    "request",
+    "assert",
+    "compare"
+  ],
+  "homepage": "https://github.com/jakubpawlik/newman-assert-json-template#readme",
   "author": "Jakub Pawlik",
-  "license": "ISC"
+  "license": "MIT"
 }
