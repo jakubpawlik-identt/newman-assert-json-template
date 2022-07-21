@@ -1,0 +1,11 @@
+{
+  "name": "newman-assert-json-template",
+  "version": "1.0.4",
+  "description": "",
+  "main": "assertJsonTemplate.js",
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "author": "Jakub Pawlik",
+  "license": "ISC"
+}
