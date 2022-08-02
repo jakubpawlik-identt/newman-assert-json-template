@@ -3,8 +3,11 @@
 
     chai.use(function(chai, _) {
         chai.Assertion.addMethod('equalRespectingEmpty', function(value, field_name) {
-            var obj = this._obj;
-            this.assert(value === null ? [null, ""].indexOf(obj) !== -1 : value === obj, `check response data (${field_name})`);
+            const obj = this._obj;
+            const allowedEmptyValues = [null, ''];
+            const is_equal = value === obj;
+
+            this.assert(!is_equal ? allowedEmptyValues.includes(value) && allowedEmptyValues.includes(obj) : is_equal, `check response data (${field_name})`);
         });
     });  
     
@@ -16,7 +19,7 @@
                 const innerKeys = Object.keys(assertData[k]).filter(ik => ik !== null);
                 innerKeys.forEach(ik => pm.expect(jsonData[k][ik]).to.be.a.equalRespectingEmpty(assertData[k][ik], `${k}.${ik}`));
             } else {
-                pm.expect(jsonData[k]).to.eql(assertData[k]);
+                pm.expect(jsonData[k]).to.be.a.equalRespectingEmpty(assertData[k], `${k}`);
             };
         });
     };
