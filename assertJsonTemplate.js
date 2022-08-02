@@ -7,7 +7,7 @@
             const allowedEmptyValues = [null, ''];
             const is_equal = value === obj;
 
-            this.assert(!is_equal ? allowedEmptyValues.includes(value) && allowedEmptyValues.includes(obj) : is_equal, `check response data (${field_name})`);
+            this.assert(!is_equal ? allowedEmptyValues.includes(value) && allowedEmptyValues.includes(obj) : is_equal, `Check response data ${field_name}, expected ${obj} to deeply equal ${value}`);
         });
     });  
     
